@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace XMen.RDM.Models
 {
     public class User
     {
         private const string ProhibitedCharacteristic = "Flat-earther";
+        private const string FixedCharacteristic = "Smart";
 
         public int UserId { get; }
         public Username UserName { get; }
@@ -38,6 +38,14 @@ namespace XMen.RDM.Models
             IsActive = true;
         }
 
+        public void BlockUser()
+        {
+            if (IsBlocked)
+                throw new OperationCanceledException("UserAlreadyBlocked");
+
+            IsBlocked = true;
+        }
+
         private static List<string> CheckProhibitedCharacteristics(List<string> characteristics)
         {
             if (characteristics.Contains(ProhibitedCharacteristic))
@@ -45,16 +53,10 @@ namespace XMen.RDM.Models
                 throw new ArgumentException("ProhibitedCharacteristic");
             }
 
-            characteristics.Add("Smart");
+            if (!characteristics.Contains(FixedCharacteristic))
+                characteristics.Add(FixedCharacteristic);
+
             return characteristics;
-        }
-
-        public void BlockUser()
-        {
-            if (IsBlocked)
-                throw new OperationCanceledException("UserAlreadyBlocked");
-
-            IsBlocked = true;
         }
     }
 }
