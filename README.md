@@ -6,7 +6,7 @@
 ## Introduction
 This is a POC for Stryker Mutator .NET Lib. Stryker offers mutation testing for your .NET Core and .NET Framework projects. It allows you to test your tests by temporarily inserting bugs in your source code
 
-For an introduction to mutation testing and Stryker's features, see [stryker-mutator.io](https://stryker-mutator.io/). Looking for mutation testing in [JavaScript & Typescript](https://stryker-mutator.github.io/stryker) or [Scala](https://stryker-mutator.github.io/stryker4s)?
+For an introduction to mutation testing and Stryker's features, see [stryker-mutator.io](https://stryker-mutator.io/). 
 
 ## Compatibility
 
