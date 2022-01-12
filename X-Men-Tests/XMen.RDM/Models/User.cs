@@ -20,8 +20,6 @@ namespace XMen.RDM.Models
             UserId = userId;
             UserName = userName;
             Email = email;
-            IsActive = false;
-            IsBlocked = false;
             Characteristics = CheckProhibitedCharacteristics(characteristics);
         }
 
