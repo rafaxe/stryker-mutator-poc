@@ -21,7 +21,7 @@ cd /stryker-mutator-poc/X-Men-Tests/XMen.Test/
 dotnet stryker
 ```
 
-For more information read our [getting started](https://stryker-mutator.io/docs/stryker-net/Getting-started)
+For more information read [getting started](https://stryker-mutator.io/docs/stryker-net/Getting-started)
 
 ## License
 
