@@ -4,7 +4,7 @@ namespace XMen.RDM.Models
 {
     public class Email
     {
-        private const string MailDomain = "@gmail.com";
+        private const string MailDomain = "@mail.com";
         private readonly string _email;
 
         private Email(string mail)

@@ -14,13 +14,13 @@ namespace XMen.Test.TestRdm
         public void ShouldNotBeActiveAfterCreation()
         {
             //Arrange //Act
-            var user = User.Create(1, new List<string>{ "Generosity", "Loyalty" }, Username.Create("John123"), Email.Create("john@gmail.com"));
+            var user = User.Create(1, new List<string>{ "Generosity", "Loyalty" }, Username.Create("John123"), Email.Create("john@mail.com"));
 
             //Assert
             Assert.False(user.IsActive);
             Assert.False(user.IsBlocked);
             Assert.Equal("John123", user.UserName.ToString());
-            Assert.Equal("john@gmail.com", user.Email.ToString());
+            Assert.Equal("john@mail.com", user.Email.ToString());
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace XMen.Test.TestRdm
         public void UserIsAlreadyActive()
         {
             //Arrange 
-            var user = User.Create(1, new List<string> { "Devotion", "Loving" }, Username.Create("John123"), Email.Create("john@gmail.com"));
+            var user = User.Create(1, new List<string> { "Devotion", "Loving" }, Username.Create("John123"), Email.Create("john@mail.com"));
             user.ActiveUser();
             bool previousStatus = user.IsActive;
 
@@ -79,7 +79,7 @@ namespace XMen.Test.TestRdm
         public void UserIsAlreadyBlocked()
         {
             //Arrange
-            var user = User.Create(1, new List<string> { "Sincerity", "Self-control" }, Username.Create("John123"), Email.Create("john@gmail.com"));
+            var user = User.Create(1, new List<string> { "Sincerity", "Self-control" }, Username.Create("John123"), Email.Create("john@mail.com"));
             user.BlockUser();
             bool previousStatus = user.IsBlocked;
 
@@ -99,15 +99,14 @@ namespace XMen.Test.TestRdm
         public void UserShouldBeSmart()
         {
             //Arrange //Act
-            var user = User.Create(1, new List<string> { "Generosity", "Loyalty" }, Username.Create("John123"), Email.Create("john@gmail.com"));
+            var user = User.Create(1, new List<string> { "Generosity", "Loyalty" }, Username.Create("John123"), Email.Create("john@mail.com"));
 
             //Assert
             Assert.False(user.IsActive);
             Assert.False(user.IsBlocked);
             Assert.Equal("John123", user.UserName.ToString());
-            Assert.Equal("john@gmail.com", user.Email.ToString());
+            Assert.Equal("john@mail.com", user.Email.ToString());
             Assert.Contains("Smart", user.Characteristics);
-
         }
 
 
@@ -118,7 +117,7 @@ namespace XMen.Test.TestRdm
             //Arrange //Act 
             var exception = Assert.Throws<ArgumentException>
             (
-                () => User.Create(1, new List<string>{ "Flat-earther" }, Username.Create("John123"), Email.Create("john@gmail.com"))
+                () => User.Create(1, new List<string>{ "Flat-earther" }, Username.Create("John123"), Email.Create("john@mail.com"))
             );
 
             //Assert
@@ -144,13 +143,13 @@ namespace XMen.Test.TestRdm
         public void UserShouldBeSmartNotDuplicated()
         {
             //Arrange //Act
-            var user = User.Create(1, new List<string> { "Generosity", "Loyalty", "Smart" }, Username.Create("John123"), Email.Create("john@gmail.com"));
+            var user = User.Create(1, new List<string> { "Generosity", "Loyalty", "Smart" }, Username.Create("John123"), Email.Create("john@mail.com"));
 
             //Assert
             Assert.False(user.IsActive);
             Assert.False(user.IsBlocked);
             Assert.Equal("John123", user.UserName.ToString());
-            Assert.Equal("john@gmail.com", user.Email.ToString());
+            Assert.Equal("john@mail.com", user.Email.ToString());
             Assert.Equal(1, user.Characteristics.Count(x => x.Equals("Smart")));
         }
     }
