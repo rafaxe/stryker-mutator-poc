@@ -1,4 +1,4 @@
-# stryker-mutator-poc
+# stryker-mutator-poc 👽
 
 [![Nuget](https://img.shields.io/nuget/v/dotnet-stryker.svg?color=blue&label=dotnet-stryker&style=flat-square)](https://www.nuget.org/packages/dotnet-stryker/)
 
